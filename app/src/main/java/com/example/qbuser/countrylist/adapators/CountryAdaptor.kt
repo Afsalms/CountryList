@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.example.qbuser.countrylist.R
 import com.example.qbuser.countrylist.models.CountryResponse
 import kotlinx.android.synthetic.main.country_list.view.*
@@ -19,6 +20,7 @@ class CountryAdaptor(val countryList: List<CountryResponse.Country>): RecyclerVi
         holder.code?.text = countryList[position].code
 //        val image_url = Uri.parse(countryList[position].icon)
 //        holder.image.setImageURI(image_url)
+        Glide.with(holder.itemView).load(countryList[position].icon).into(holder.image)
 
     }
 
