@@ -18,8 +18,6 @@ class CountryAdaptor(val countryList: List<CountryResponse.Country>): RecyclerVi
         holder.name?.text = countryList[position].name
         holder.isd_code?.text = countryList[position].isd_code
         holder.code?.text = countryList[position].code
-//        val image_url = Uri.parse(countryList[position].icon)
-//        holder.image.setImageURI(image_url)
         Glide.with(holder.itemView).load(countryList[position].icon).into(holder.image)
 
     }
